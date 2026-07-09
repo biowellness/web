@@ -1,0 +1,10 @@
+Colocar aquí las imágenes del sitio.
+
+Sugeridas (ver conversación de diseño):
+- hbot.jpg          Cámara hiperbárica (IMG·01)
+- recovery.jpg      Circuito Recovery Pro (IMG·02)
+- redlight.jpg      Panel Red Light full body (IMG·03)
+- equipo-*.jpg      Retratos del equipo (mismo encuadre y luz)
+
+Uso: <img class="img-cover" src="img/hbot.jpg" alt="Cámara hiperbárica en BioWellness">
+dentro de .img-slot o .avatar (el CSS ya contempla .img-cover).
