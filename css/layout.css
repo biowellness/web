@@ -1,0 +1,42 @@
+/* ============================================================
+   BIOWELLNESS · LAYOUT
+   Contenedores, ritmo vertical y contextos de color.
+   ============================================================ */
+
+@layer layout{
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+
+  .section{padding-block:clamp(4.5rem,10vw,8rem)}
+
+  /* ----- Contextos de color -----
+     Además del fondo/color, redefinen las variables semánticas
+     (--bg, --bg-2, --border, --tx, --tx-mut) que usan los
+     componentes genéricos: formularios, notices, tablas, badges. */
+  .on-dark{
+    background:var(--ink);color:var(--tx-l);
+    --bg:var(--ink);--bg-2:var(--ink-2);--border:var(--ink-3);
+    --tx:var(--tx-l);--tx-mut:var(--tx-l-mut);
+  }
+  .on-light{
+    background:var(--bone);color:var(--tx-d);
+    --bg:var(--bone);--bg-2:var(--bone-2);--border:var(--stone);
+    --tx:var(--tx-d);--tx-mut:var(--tx-d-mut);
+  }
+
+  .spectrum-rule{height:3px;background:var(--spectrum);border:0;width:100%}
+
+  /* ----- Grillas de apoyo para páginas nuevas ----- */
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+
+  /* Ritmo vertical automático entre hijos */
+  .flow > * + *{margin-top:var(--flow,1rem)}
+
+  @media (max-width:960px){
+    .grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:640px){
+    .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  }
+}

@@ -1,0 +1,90 @@
+/* ============================================================
+   BIOWELLNESS · DESIGN TOKENS
+   ------------------------------------------------------------
+   Fuente de verdad de la identidad visual. Editá acá y todo
+   el sitio se actualiza. Este archivo se carga PRIMERO.
+   ============================================================ */
+
+/* Orden del cascade (CSS Layers).
+   Regla práctica: cualquier CSS que escribas SIN capa
+   (por ejemplo, estilos propios de una página) le gana
+   a todas estas capas. */
+@layer reset, base, layout, components, utilities;
+
+:root{
+  /* ---------- Superficies ---------- */
+  --ink:   #0C1114;   /* fondo profundo (cámara / oxígeno disuelto) */
+  --ink-2: #121A1F;   /* superficie elevada sobre oscuro */
+  --ink-3: #202C33;   /* bordes sobre oscuro */
+  --bone:   #E9EBE6;  /* fondo claro mineral */
+  --bone-2: #FAFBF8;  /* tarjetas sobre claro */
+  --stone:  #D6DAD3;  /* bordes sobre claro */
+
+  /* ---------- Texto ---------- */
+  --tx-d:     #0C1114;
+  --tx-d-mut: #586A63;
+  --tx-l:     #ECEFE9;
+  --tx-l-mut: #93A29A;
+
+  /* ---------- Espectro terapéutico (firma de marca) ---------- */
+  --amber: #E6A23C;   /* 590 nm */
+  --red:   #D64A2A;   /* 660 nm */
+  --infra: #6E1C18;   /* infrarrojo cercano */
+
+  /* ---------- Oxígeno (contrapunto) ---------- */
+  --oxy:      #2BA79D;
+  --oxy-deep: #0F6A64;
+
+  /* ---------- Gradientes ---------- */
+  --spectrum:   linear-gradient(90deg,  var(--amber) 0%, var(--red) 55%, var(--infra) 100%);
+  --spectrum-v: linear-gradient(180deg, var(--amber) 0%, var(--red) 55%, var(--infra) 100%);
+
+  /* ---------- Tipografía ---------- */
+  --ff-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --ff-body:    "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ff-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Escala de display (usada por hero y títulos de sección) */
+  --fs-hero: clamp(2.9rem, 7.4vw, 6.1rem);
+  --fs-h2:   clamp(2rem,   4.6vw, 3.5rem);
+  --fs-cta:  clamp(2.2rem, 5vw,   4rem);
+
+  /* ---------- Layout ---------- */
+  --maxw: 1200px;
+  --pad:  clamp(1.25rem, 5vw, 2.5rem);
+
+  /* ---------- Espaciado (para componentes nuevos) ---------- */
+  --space-2xs: .25rem;
+  --space-xs:  .5rem;
+  --space-sm:  .75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* ---------- Radios ---------- */
+  --r-sm:   11px;
+  --r-md:   14px;
+  --r-lg:   16px;
+  --r-xl:   18px;
+  --r-pill: 999px;
+
+  /* ---------- Sombra ---------- */
+  --shadow-card: 0 22px 40px -26px rgba(12,17,20,.4);
+  --shadow-btn:  0 6px 22px -8px rgba(214,74,42,.7);
+
+  /* ---------- Motion ---------- */
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --t-fast: .25s;
+  --t-med:  .4s;
+
+  /* ---------- Contexto semántico (default: oscuro) ----------
+     Los componentes genéricos (formularios, notices, tablas)
+     leen estas variables; .on-dark / .on-light las redefinen. */
+  --bg:     var(--ink);
+  --bg-2:   var(--ink-2);
+  --border: var(--ink-3);
+  --tx:     var(--tx-l);
+  --tx-mut: var(--tx-l-mut);
+}
